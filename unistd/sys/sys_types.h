@@ -8,11 +8,8 @@
 #include <stdint.h>
 #include "../linux/limits.h"
 
-#ifdef INT_PID_T
 typedef int pid_t;
-#else
-typedef intptr_t pid_t;
-#endif
+
 typedef int gid_t;
 typedef int uid_t;
 typedef int sigval_t;
