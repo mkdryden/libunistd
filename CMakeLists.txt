@@ -7,6 +7,12 @@ message("--- Building ${PROJECT_NAME} ${CMAKE_SYSTEM_NAME}:${CMAKE_HOST_SYSTEM_P
 
 option(UE4 "Disable _ITERATOR_DEBUG_LEVEL for UE4 compatibility" OFF)
 option(WITH_TESTS "Enable this to build the tests / examples as well." OFF)
+option(INT_PID_T "Use int for pid_t" OFF)
+
+if (INT_PID_T)
+	add_definitions(-DINT_PID_T)
+	message("Using int for pid_t")
+endif ()
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED FALSE)
